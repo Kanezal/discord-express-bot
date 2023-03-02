@@ -1,0 +1,85 @@
+{
+    "application_id": "1071794347277819994",
+    "channel_id": "1071809371383791616",
+    "data": {
+        "id": "1071807569435295844",
+        "name": "report",
+        "options": [
+            {
+                "name": "punish_type",
+                "type": 3,
+                "value": "arrest"
+            },
+            {
+                "name": "idn",
+                "type": 3,
+                "value": "0000"
+            },
+            {
+                "name": "legion",
+                "type": 3,
+                "value": "979697228111314995"
+            },
+            {
+                "name": "rank",
+                "type": 3,
+                "value": "HGEN"
+            },
+            {
+                "name": "name",
+                "type": 3,
+                "value": "Mister Twister"
+            },
+            {
+                "name": "steamid",
+                "type": 3,
+                "value": "STEAM_0:0:123123123123213"
+            },
+            {
+                "name": "image",
+                "type": 11,
+                "value": "1080935709378097192"
+            },
+            {
+                "name": "terms",
+                "type": 4,
+                "value": 2
+            },
+            {
+                "name": "description",
+                "type": 3,
+                "value": "Life could be dream"
+            }
+        ],
+        "resolved": {
+            "attachments": {
+                "1080935709378097192": {
+                    "content_type": "image/png",
+                    "ephemeral": true,
+                    "filename": "Dislike.png",
+                    "height": 128,
+                    "id": "1080935709378097192",
+                    "proxy_url": "https://media.discordapp.net/ephemeral-attachments/1071807569435295844/1080935709378097192/Dislike.png",
+                    "size": 4033,
+                    "url": "https://cdn.discordapp.com/ephemeral-attachments/1071807569435295844/1080935709378097192/Dislike.png",
+                    "width": 128
+                }
+            }
+        },
+        "type": 1
+    },
+    "id": "1080935710212755496",
+    "locale": "ru",
+    "token": "aW50ZXJhY3Rpb246MTA4MDkzNTcxMDIxMjc1NTQ5Njo0bmxhS0trVUJIb0FZWmpYc0sxT2dEeWJaWHJZRmRQU1pmUEJIeEpBSTJ4YzcwNFN1M3RtRkJJaFZPY1VtNHVYejdadjhMSDU3emgwT1NBaUtnSVJtc3JPSnlSUDBZT1prSmNaNDZ3ckozM1FNbmVEWEdId1lzUlJZOENsVjVCcA",
+    "type": 2,
+    "user": {
+        "avatar": "dfc308f07654873ec2d7c2cf4f988c13",
+        "avatar_decoration": null,
+        "discriminator": "6272",
+        "display_name": null,
+        "id": "663479064526323712",
+        "public_flags": 0,
+        "username": "Trooper"
+    },
+    "version": 1
+}

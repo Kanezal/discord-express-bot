@@ -1,0 +1,114 @@
+{
+    "app_permissions": "1072638058176",
+    "application_id": "1071794347277819994",
+    "channel_id": "768506657427816490",
+    "data": {
+        "id": "1071807569435295844",
+        "name": "report",
+        "options": [
+            {
+                "name": "punish_type",
+                "type": 3,
+                "value": "arrest"
+            },
+            {
+                "name": "idn",
+                "type": 3,
+                "value": "0000"
+            },
+            {
+                "name": "legion",
+                "type": 3,
+                "value": "979697228111314995"
+            },
+            {
+                "name": "rank",
+                "type": 3,
+                "value": "HGEN"
+            },
+            {
+                "name": "name",
+                "type": 3,
+                "value": "Mister Twister"
+            },
+            {
+                "name": "steamid",
+                "type": 3,
+                "value": "STEAM_0:0:123123123123213"
+            },
+            {
+                "name": "image",
+                "type": 11,
+                "value": "1080943920768364615"
+            },
+            {
+                "name": "terms",
+                "type": 4,
+                "value": 2
+            },
+            {
+                "name": "description",
+                "type": 3,
+                "value": "Life could be dream"
+            }
+        ],
+        "resolved": {
+            "attachments": {
+                "1080943920768364615": {
+                    "content_type": "image/png",
+                    "ephemeral": true,
+                    "filename": "brainlet.png",
+                    "height": 729,
+                    "id": "1080943920768364615",
+                    "proxy_url": "https://media.discordapp.net/ephemeral-attachments/1071807569435295844/1080943920768364615/brainlet.png",
+                    "size": 30199,
+                    "url": "https://cdn.discordapp.com/ephemeral-attachments/1071807569435295844/1080943920768364615/brainlet.png",
+                    "width": 645
+                }
+            }
+        },
+        "type": 1
+    },
+    "entitlement_sku_ids": [],
+    "guild_id": "768506656304660510",
+    "guild_locale": "ru",
+    "id": "1080943921477206087",
+    "locale": "ru",
+    "member": {
+        "avatar": null,
+        "communication_disabled_until": "2022-09-05T12:23:53+00:00",
+        "deaf": false,
+        "flags": 0,
+        "is_pending": false,
+        "joined_at": "2022-03-06T15:20:20.729000+00:00",
+        "mute": false,
+        "nick": "9130 | Trooper",
+        "pending": false,
+        "permissions": "4398046511103",
+        "premium_since": null,
+        "roles": [
+            "781114152701788165",
+            "836910474565779497",
+            "886910350560206889",
+            "770393037024788530",
+            "886910743360991252",
+            "886910484622741526",
+            "768506656312655962",
+            "768506656392609821",
+            "770393221926486046",
+            "891039450098991135"
+        ],
+        "user": {
+            "avatar": "dfc308f07654873ec2d7c2cf4f988c13",
+            "avatar_decoration": null,
+            "discriminator": "6272",
+            "display_name": null,
+            "id": "663479064526323712",
+            "public_flags": 0,
+            "username": "Trooper"
+        }
+    },
+    "token": "aW50ZXJhY3Rpb246MTA4MDk0MzkyMTQ3NzIwNjA4NzpzZDhwQXBmRTRLTTJMRUhESlZvYTZiSUNYYjJwRHc2dHZNNjFZc29TU0xmeGs4R3paNE5pbkRtRVVpY0pvMzJSaGZPUTRobXE4WWVUWHhENVFMOVljTVpmS0t6NUVnaDIyZ09wUmg1VW1lbkk3RFltaGhQS3ZFdDNaeUFGN0h1bA",
+    "type": 2,
+    "version": 1
+}
