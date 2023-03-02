@@ -7,6 +7,7 @@ const { isGuardCheck } = require('../functions/checks')
 
 module.exports = {
     report(res, message) {
+		// TODO: Неправильная реакция на отправку сообщения в дисе гвардии
         if (!isGuardCheck(message)) {
 			res.send({
 				type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
