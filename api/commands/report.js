@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { InteractionType, InteractionResponseType, InteractionResponseFlags } = require('discord-interactions')
-const { clientId, guildId, report_channels, ranks, punishTypes, disciplinaryChannelId } = require('../config.json');
+const { clientId, guildId, report_channels, ranks, punishTypes, disciplinaryChannelId } = require('../../config.json');
 require('dotenv').config()
 
 const { isGuardCheck } = require('../functions/checks')

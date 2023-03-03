@@ -1,4 +1,4 @@
-const { guardRoleId } = require("../config.json")
+const { guardRoleId } = require("../../config.json")
 
 module.exports = {
     isGuardCheck(message) {
