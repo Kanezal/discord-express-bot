@@ -2,10 +2,9 @@ const { guardRoleId } = require("../config.json")
 
 module.exports = {
     isGuardCheck(message) {
-        console.log(message)
         try {
-            if (message.member && message.roles.includes(guardRoleId)) {
-                return true
+            if (message.member) {
+                return message.member.roles.includes(guardRoleId)
             }
         } catch (error) {
             return false
