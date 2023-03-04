@@ -15,7 +15,7 @@ module.exports = {
 			},
 		})
 
-        data = JSON.parse(response.body)
+        data = await response.json()
         if (data.code == 10013) {
             return false
         }

@@ -68,11 +68,11 @@ module.exports = {
 			color: 0xe10e0e,
 			title: `Рапорт: ${punishTypes.find(obj => obj.value == punishType).name}`,
 			author: {
-				name: message.member.user.username,
-				icon_url: `https://cdn.discordapp.com/avatars/${message.member.user.id}/${message.member.user.avatar}.png`,
-				url: `https://discord.com/users/${message.member.user.id}`
+				name: message.user.username,
+				icon_url: `https://cdn.discordapp.com/avatars/${message.user.id}/${message.user.avatar}.png`,
+				url: `https://discord.com/users/${message.user.id}`
 			},
-			description: `<@${message.member.user.id}>`,
+			description: `<@${message.user.id}>`,
 			fields: [
 				{ name: 'IDN', value: message.data.options.find(obj => obj.name == 'idn').value, inline: true },
 				{ name: 'Легион', value: legionName, inline: true },
@@ -96,11 +96,11 @@ module.exports = {
 				'Authorization': `Bot ${process.env.DISCORD_TOKEN}`
 			},
 			body: JSON.stringify({embeds: [embed]})
-		}).then(resLoc => {
+		}).then(async resLoc => {
 			res.send({
 				type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
 				data: {
-					content: 'Рапорт успешно отправлен. Дублирую отправленный вам рапорт для личного дела.',
+					content: 'Рапорт успешно отправлен. Дублирую отправленный вами рапорт для вашего личного дела.',
 					flags: InteractionResponseFlags.EPHEMERAL
 				},
 			});
