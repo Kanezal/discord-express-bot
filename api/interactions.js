@@ -13,10 +13,10 @@ require("fs").readdirSync(normalizedPath).forEach(function (file) {
  * 
  * @return message to user
  */
-router.post('/', verifyKeyMiddleware(publicKey), (req, res) => {
+router.post('/', verifyKeyMiddleware(publicKey), async (req, res) => {
     const message = req.body;
     if (message.type === InteractionType.APPLICATION_COMMAND) {
-        commands[message.data.name](res, message)
+        await commands[message.data.name](res, message)
     }
 });
 

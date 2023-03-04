@@ -7,12 +7,12 @@ const { isGuardCheck } = require('../functions/checks')
 
 
 module.exports = {
-    report(res, message) {
-        if (!isGuardCheck(message)) {
+    async report(res, message) {
+        if (!(await isGuardCheck(message))) {
 			res.send({
 				type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
 				data: {
-					content: 'Попробуйте написать рапорт используя любой доступный вам канал в дискорде гвардии.',
+					content: 'Доступ запрещен. Неавторизованное лицо, попытка проникновения в базу данных гвардии карается согласно уставу ВАР.',
 					flags: InteractionResponseFlags.EPHEMERAL
 				},
 			});
@@ -100,11 +100,10 @@ module.exports = {
 			res.send({
 				type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
 				data: {
-					content: 'Рапорт успешно отправлен.',
+					content: 'Рапорт успешно отправлен. Дублирую отправленный вам рапорт для личного дела.',
 					flags: InteractionResponseFlags.EPHEMERAL
 				},
 			});
-			return;
 		}).catch(err => {
 			res.send({
 				type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
@@ -114,6 +113,15 @@ module.exports = {
 				},
 			});
 			return;
+		})
+
+		fetch(`https://discord.com/api/channels/${message.channel_id}/messages`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': `Bot ${process.env.DISCORD_TOKEN}`
+			},
+			body: JSON.stringify({embeds: [embed]})
 		})
     },
     

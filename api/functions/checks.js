@@ -1,13 +1,24 @@
-const { guardRoleId } = require("../../config.json")
+const { guardRoleId, guardGuildId } = require("../../config.json")
+require('dotenv').config()
 
 module.exports = {
-    isGuardCheck(message) {
-        try {
-            if (message.member) {
-                return message.member.roles.includes(guardRoleId)
-            }
-        } catch (error) {
+    async isGuardCheck(message) {
+        if (message.member != undefined) {
             return false
         }
+
+        const response = await fetch(`https://discord.com/api/guilds/${guardGuildId}/members/${message.user.id}`, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': `Bot ${process.env.DISCORD_TOKEN}`
+			},
+		})
+
+        data = JSON.parse(response.body)
+        if (data.code == 10013) {
+            return false
+        }
+        return data.roles.includes(guardRoleId)
     }
 }
