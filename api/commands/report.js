@@ -48,16 +48,16 @@ module.exports = {
 			var channel = message.data.options.find(obj => obj.name == "legion").value
 		} else {
 
-			if (legionName == "SOB") {
-				res.send({
-					type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-					data: {
-						content: 'Дисциплинарное взыскание к бойцу SOB невозможно. Обратитесь к старшему.',
-						flags: InteractionResponseFlags.EPHEMERAL
-					},
-				});
-				return;
-			}
+			// if (legionName == "SOB") {
+			// 	res.send({
+			// 		type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+			// 		data: {
+			// 			content: 'Дисциплинарное взыскание к бойцу SOB невозможно. Обратитесь к старшему.',
+			// 			flags: InteractionResponseFlags.EPHEMERAL
+			// 		},
+			// 	});
+			// 	return;
+			// }
 
 			var channel = disciplinaryChannelId
 		}
