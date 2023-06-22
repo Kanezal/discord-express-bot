@@ -9,16 +9,16 @@ module.exports = {
     async manhunt(res, message) {
         const embed = {
 			color: 0xe10e0e,
-			title: `Розыск:`,
+			title: `Объявление о розыске`,
 			author: {
 				name: message.user.username,
 				icon_url: `https://cdn.discordapp.com/avatars/${message.user.id}/${message.user.avatar}.png`,
 				url: `https://discord.com/users/${message.user.id}`
 			},
-			description: `<@${message.user.id}>`,
+			description: `Отправитель: <@${message.user.id}>`,
 			fields: [
-				{ name: 'Данные', value: message.data.options.find(obj => obj.name == 'marks').value },
-				{ name: 'Причина', value: message.data.options.find(obj => obj.name == 'reason').value },
+				{ name: '# Данные', value: message.data.options.find(obj => obj.name == 'marks').value },
+				{ name: '# Причина', value: message.data.options.find(obj => obj.name == 'reason').value },
             ],
 		}
 
