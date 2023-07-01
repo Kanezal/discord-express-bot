@@ -4,21 +4,11 @@ const { clientId, guildId, report_channels, ranks, punishTypes, disciplinaryChan
 require('dotenv').config()
 
 const { isGuardCheck } = require('../functions/checks')
+const { sendDM } = require("../functions/sendto")
 
 
 module.exports = {
     async report(res, message) {
-        if (!(await isGuardCheck(message))) {
-			res.send({
-				type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-				data: {
-					content: 'Доступ запрещен. Неавторизованное лицо, попытка проникновения в базу данных гвардии карается согласно уставу ВАР.',
-					flags: InteractionResponseFlags.EPHEMERAL
-				},
-			});
-			return;
-		}
-
 		if (message.data.options.find(obj => obj.name == "steamid").value.slice(0,6) !== "STEAM_") {
 			res.send({
 				type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
@@ -115,14 +105,16 @@ module.exports = {
 			return;
 		})
 
-		fetch(`https://discord.com/api/channels/${message.channel_id}/messages`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				'Authorization': `Bot ${process.env.DISCORD_TOKEN}`
-			},
-			body: JSON.stringify({embeds: [embed]})
-		})
+		await sendDM(message.user.id, body);
+
+		// fetch(`https://discord.com/api/channels/${message.channel_id}/messages`, {
+		// 	method: 'POST',
+		// 	headers: {
+		// 		'Content-Type': 'application/json',
+		// 		'Authorization': `Bot ${process.env.DISCORD_TOKEN}`
+		// 	},
+		// 	body: JSON.stringify({embeds: [embed]})
+		// })
     },
     
     data: new SlashCommandBuilder()

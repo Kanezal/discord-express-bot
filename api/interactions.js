@@ -1,5 +1,6 @@
 const { verifyKeyMiddleware, InteractionType } = require('discord-interactions')
 const { publicKey } = require("../config.json")
+const { isGuard } = require("../api/functions/checks")
 const router = require('express').Router()
 
 const commands = {}
@@ -16,6 +17,9 @@ require("fs").readdirSync(normalizedPath).forEach(function (file) {
 router.post('/', verifyKeyMiddleware(publicKey), async (req, res) => {
     const message = req.body;
     if (message.type === InteractionType.APPLICATION_COMMAND) {
+        if (!isGuard)
+            return undefined
+
         await commands[message.data.name](res, message)
     }
 });

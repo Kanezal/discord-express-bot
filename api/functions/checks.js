@@ -3,9 +3,9 @@ require('dotenv').config()
 
 module.exports = {
     async isGuardCheck(message) {
-        if (message.member != undefined) {
-            return false
-        }
+        // if (message.member != undefined) {
+        //     return false
+        // }
 
         const response = await fetch(`https://discord.com/api/guilds/${guardGuildId}/members/${message.user.id}`, {
 			method: 'GET',
@@ -20,5 +20,19 @@ module.exports = {
             return false
         }
         return data.roles.includes(guardRoleId)
+    },
+
+    async isGuard(message) {
+        if (!(await isGuardCheck(message))) {
+            res.send({
+                type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+                data: {
+                    content: 'Доступ запрещен. Неавторизованное лицо, попытка проникновения в базу данных гвардии карается согласно уставу ВАР.',
+                    flags: InteractionResponseFlags.EPHEMERAL
+                },
+            });
+            return false
+        }
+        return true
     }
 }
